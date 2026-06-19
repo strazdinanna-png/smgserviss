@@ -9,13 +9,15 @@
     
     <style>
         :root {
-            --firm-orange: #ff6600; /* ВАШ ОРАНЖЕВЫЙ ЦВЕТ */
+            --firm-orange: #ff6600; 
             --dark-grey: #1a1a1a;
             --light-bg: #ffffff;
         }
         body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--light-bg); color: var(--dark-grey); line-height: 1.6; }
+        
         nav { background: #fff; padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-top: 6px solid var(--firm-orange); }
-               .nav-container { 
+        
+        .nav-container { 
             max-width: 1200px; 
             margin: 0 auto; 
             display: flex; 
@@ -36,13 +38,18 @@
             height: 60px !important; 
             width: auto !important;
             margin-right: 15px !important;
+            flex-shrink: 0;
         }
 
         .logo-text { font-weight: 900; font-size: 1.5rem; text-transform: uppercase; }
         .logo-text span { color: var(--firm-orange); }
+
         .hero { background: #000; color: white; padding: 120px 20px; text-align: center; background-size: cover; background-position: center; position: relative; }
         .hero h1 { font-size: 3.5rem; margin: 0; text-transform: uppercase; position: relative; z-index: 2; }
-        .hero p { font-size: 1.4rem; color: var(--firm-orange); font-weight: bold; margin-top: 15px; position: relative; z-index: 2; }
+        
+        .hero-desc { font-size: 1.2rem; color: #fff; max-width: 800px; margin: 20px auto; position: relative; z-index: 2; line-height: 1.5; }
+        .hero-accent { color: var(--firm-orange); font-weight: bold; display: block; font-size: 1.6rem; margin-bottom: 10px; }
+
         .section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
         .service-row { display: flex; align-items: center; gap: 70px; margin-bottom: 100px; }
         .service-row:nth-child(even) { flex-direction: row-reverse; }
@@ -51,76 +58,60 @@
         .service-text { flex: 1; }
         .service-text h2 { font-size: 2.2rem; text-transform: uppercase; color: var(--dark-grey); margin-top: 0; }
         .service-text h2::after { content: ''; display: block; width: 60px; height: 5px; background: var(--firm-orange); margin-top: 15px; }
+        
         .highlight-section { background: var(--firm-orange); color: white; padding: 80px 20px; text-align: center; }
         .highlight-section h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; margin: 0; color: #fff;}
+        
         .contacts { background: #111; color: white; padding: 80px 20px; text-align: center; }
         .cta-btn { background: var(--firm-orange); color: white; padding: 18px 45px; text-decoration: none; font-weight: 900; display: inline-block; text-transform: uppercase; }
-        @media (max-width: 900px) { .service-row, .service-row:nth-child(even) { flex-direction: column; text-align: center; } .service-image img { height: 300px; } }
+        
+        @media (max-width: 900px) { 
+            .service-row, .service-row:nth-child(even) { flex-direction: column; text-align: center; } 
+            .service-image img { height: 300px; } 
+            .hero h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- 1. ВЕРХНЯЯ ПАНЕЛЬ -->
+    <!-- 1. НАВИГАЦИЯ -->
     <nav>
-           <nav>
         <div class="nav-container">
             <a href="#" class="logo-box">
-                <!-- ТУТ ВАШ ФАЙЛ ЛОГОТИПА -->
-                <img src="logo.jpg" alt="Logo" width="60" height="60" style="height: 60px !important; width: auto !important; display: block !important; flex-shrink: 0;"> 
+                <img src="logo.jpg" alt="Logo" class="logo-img"> 
                 <div class="logo-text">SMAGAIS <span>SERVISS</span></div>
             </a>
-            <div style="font-weight: 900; font-size: 1.2rem;">+371 20 220 702</div>
-        </div>
-    </nav>
-                <!-- ТУТ ССЫЛКА НА ЛОГОТИП -->
-                <img src="Logo.jpg"> 
-                <!-- ТУТ НАЗВАНИЕ В ШАПКЕ -->
-                <div class="logo-text">SMAGAIS <span>SERVISS</span></div>
-            </a>
-            <!-- ТУТ НОМЕР ТЕЛЕФОНА ВВЕРХУ -->
             <div style="font-weight: 900; font-size: 1.2rem;">+371 20 220 702</div>
         </div>
     </nav>
 
-    <!-- 2. ГЛАВНЫЙ БАНЕР (ЭКСКАВАТОР) -->
-    <!-- ВНИМАНИЕ: ССЫЛКА НА КАРТИНКУ НИЖЕ В СКОБКАХ URL -->
+    <!-- 2. ГЛАВНЫЙ БАНЕР -->
     <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('main.jpg');">
         <h1>SMAGĀS TEHNIKAS EKSPERTI</h1> 
-        
         <div class="hero-desc">
-            <!-- ВТОРОЙ ПОДЗАГОЛОВОК -->
             <span class="hero-accent">Uzturam jūsu smago tehniku kustībā.</span>
-            
-            <!-- ПУСТАЯ СТРОЧКА (делается через тег <br>) -->
             <br>
-
-            <!-- ОСНОВНОЙ ТЕКСТ -->
             Smagais Serviss specializējas ātrā un uzticamā smago iekārtu remontā Latvijā. No traktoriem līdz ekskavatoriem — mūsu pieredzējušie tehniķi nodrošina, ka jūsu tehnikas parks paliek darbspējīgs, veicot profesionālu diagnostiku, izbraukuma servisus un oriģinālās kvalitātes rezerves daļas. Samazināsim dīkstāvi un palielināsim jūsu produktivitāti.
         </div>
     </header>
 
-</p> <!-- ПОДЗАГОЛОВОК -->
-    </header>
-
     <div class="section">
         
-        <!-- 3. БЛОК: ДВИГАТЕЛИ -->
+        <!-- 3. DZINĒJI -->
         <div class="service-row">
             <div class="service-image">
-                <!-- ССЫЛКА НА ФОТО ДВИГАТЕЛЯ -->
-                <img src="engine.jpg">
+                <img src="engine.jpg" alt="Dzinēju remonts">
             </div>
             <div class="service-text">
-                <h2>Dzinēju remonts</h2> <!-- ЗАГОЛОВОК УСЛУГИ -->
-                <p>Mēs veicam pilna cikla dzinēju diagnostiku un kapitālo remontu. Mūsu pieredzējušie tehniķi izmanto modernu instrumentu klāstu, lai ātri noteiktu problēmas, nodrošinot precīzus un efektīvus remontdarbus visiem smago iekārtu veidiem. Mēs ātri nonākam līdz problēmas saknei.</p> <!-- ТЕКСТ УСЛУГИ -->
+                <h2>Dzinēju remonts</h2>
+                <p>Mēs veicam pilna cikla dzinēju diagnostiku un kapitālo remontu. Mūsu pieredzējušie tehniķi izmanto modernu instrumentu klāstu, lai ātri noteiktu problēmas, nodrošinot precīzus un efektīvus remontdarbus visiem smago iekārtu veidiem.</p>
             </div>
         </div>
 
-        <!-- 4. БЛОК: ГИДРАВЛИКА -->
+        <!-- 4. HIDRAULIKA -->
         <div class="service-row">
             <div class="service-image">
-                <!-- ССЫЛКА НА ФОТО ГИДРАВЛИКИ -->
-                <img src="hidraulics.jpg">
+                <img src="hidraulics.jpg" alt="Hidraulikas serviss">
             </div>
             <div class="service-text">
                 <h2>Hidraulikas serviss</h2>
@@ -128,11 +119,10 @@
             </div>
         </div>
 
-        <!-- 5. БЛОК: ИНСТРУМЕНТЫ -->
+        <!-- 5. PREVENTĪVĀ APKOPE -->
         <div class="service-row">
             <div class="service-image">
-                <!-- ССЫЛКА НА ФОТО ИНСТРУМЕНТОВ -->
-                <img src="preventiv.jpg">
+                <img src="preventiv.jpg" alt="Preventīvā apkope">
             </div>
             <div class="service-text">
                 <h2>Preventīvā apkope</h2>
@@ -140,35 +130,34 @@
             </div>
         </div>
 
-        <!-- 6. БЛОК: ВЫЕЗД -->
+        <!-- 6. IZBRAUKUMA SERVISS -->
         <div class="service-row">
             <div class="service-image">
-                <!-- ССЫЛКА НА ФОТО МАШИНЫ -->
-                <img src="service.jpg">
+                <img src="service.jpg" alt="Izbraukuma serviss">
             </div>
             <div class="service-text">
                 <h2>Izbraukuma un ārkārtas serviss</h2>
-                <p>Mūsu mobilās servisa brigādes ir aprīkotas ar visu nepieciešamo, lai veiktu remontu tieši jūsu objektā vai karjerā.</p>
+                <p>Mūsu mobilās servisa brigādes ir aprīkotas ar visu nepieciešamo, lai veiktu remontu tieši jūsu objektā vai karjerā jebkurā laikā.</p>
             </div>
         </div>
 
     </div>
 
-    <!-- 7. ОРАНЖЕВЫЙ БЛОК (ОТ А ДО Я) -->
+    <!-- 7. ATLASE UN PIEGĀDE -->
     <section class="highlight-section">
-        <h2>Tehnikas atlase un piegāde "no A līdz Z"</h2> <!-- ЗАГОЛОВОК -->
-        <p>Jūs definējat uzdevumu un budžetu – mēs izdarām visu pārējo. Veicam tehnikas meklēšanu visā Eiropā, padziļinātu pārbaudi, remontu и piegādi pie Jums.</p> <!-- ТЕКСТ -->
+        <h2>Tehnikas atlase un piegāde "no A līdz Z"</h2>
+        <p>Jūs definējat uzdevumu un budžetu – mēs izdarām visu pārējo. Veicam tehnikas meklēšanu visā Eiropā, padziļinātu pārbaudi, remontu un piegādi tieši pie Jums uz objektu. Ar mums tehnikas iegāde kļūst par drošu un pārskatāmu procesu.</p>
     </section>
 
-    <!-- 8. ПОДВАЛ (КОНТАКТЫ) -->
+    <!-- 8. KONTAKTI -->
     <footer id="contact" class="contacts">
-        <a href="tel:+37120220702" class="cta-btn">Zvanīt mums</a> <!-- ТЕКСТ КНОПКИ -->
+        <a href="tel:+37120220702" class="cta-btn">Zvanīt mums</a>
         
         <div style="margin-top: 50px; font-size: 1.1rem; color: #aaa;">
-            <p><strong>SIA Smagais Serviss</strong></p> <!-- НАЗВАНИЕ -->
-            <p>📍 Sila iela 12, Babīte, Latvija</p> <!-- АДРЕС -->
-            <p>📞 +371 20 220 702</p> <!-- ТЕЛЕФОН -->
-            <p>✉️ smagais.epasts@gmail.com</p> <!-- ПОЧТА -->
+            <p><strong>SIA Smagais Serviss</strong></p>
+            <p>📍 Sila iela 12, Babīte, Latvija</p>
+            <p>📞 +371 20 220 702</p>
+            <p>✉️ smagais.epasts@gmail.com</p>
         </div>
         
         <p style="margin-top: 60px; opacity: 0.2;">&copy; 2024 SMAGAIS SERVISS. Reģ. nr. 45403041478</p>
@@ -176,3 +165,4 @@
 
 </body>
 </html>
+
