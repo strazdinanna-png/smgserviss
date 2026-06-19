@@ -16,13 +16,20 @@
         body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--light-bg); color: var(--dark-grey); line-height: 1.6; }
         nav { background: #fff; padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-top: 6px solid var(--firm-orange); }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-                .logo-box { display: flex; align-items: center; text-decoration: none; color: var(--dark-grey); }
-        .logo-img { 
-            height: 60px;       /* Жесткая высота логотипа */
-            width: auto;        /* Ширина подстроится автоматически */
+                       .logo-box { 
+            display: flex; 
+            align-items: center; 
+            text-decoration: none; 
+            color: var(--dark-grey);
+            max-height: 60px;   /* Чтобы сама ссылка не раздувалась */
+        }
+                .logo-img { 
+            display: block;
+            height: 60px;       /* Это ограничит высоту до нормальной */
+            width: auto;        /* Это сохранит пропорции */
+            max-width: 100%;    /* Это не даст ему вылезать за рамки */
             margin-right: 15px; 
-            object-fit: contain; /* Картинка не будет растягиваться */
-        } 
+        }
         .logo-text { font-weight: 900; font-size: 1.5rem; text-transform: uppercase; }
         .logo-text span { color: var(--firm-orange); }
         .hero { background: #000; color: white; padding: 120px 20px; text-align: center; background-size: cover; background-position: center; position: relative; }
